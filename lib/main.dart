@@ -1,3 +1,5 @@
+import 'package:device_preview/device_preview.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 // import 'package:sertifikasi_pertama/latihan_1.dart';
 // import 'package:sertifikasi_pertama/latihan_2.dart';
@@ -7,9 +9,15 @@ import 'package:flutter/material.dart';
 // import 'package:sertifikasi_pertama/day_1/latihan_6.dart';
 import 'package:sertifikasi_pertama/day_1/latihan_7.dart';
 import 'package:sertifikasi_pertama/day_1/latihan_8.dart';
+import 'package:sertifikasi_pertama/day_3/BabAsset/asset_page.dart';
+import 'package:sertifikasi_pertama/day_3/Navigation/home_page.dart';
+import 'package:sertifikasi_pertama/day_3/Navigation/text_input_page.dart';
+import 'package:sertifikasi_pertama/day_3/Onboarding/onboarding.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(
+    DevicePreview(enabled: !kReleaseMode, builder: (context) => const MyApp()),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -17,6 +25,11 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(debugShowCheckedModeBanner: false, home: Latihan8());
+    return MaterialApp(
+      locale: DevicePreview.locale(context),
+      builder: DevicePreview.appBuilder,
+      debugShowCheckedModeBanner: false,
+      home: Onboarding(),
+    );
   }
 }

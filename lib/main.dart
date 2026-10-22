@@ -13,6 +13,8 @@ import 'package:sertifikasi_pertama/day_3/BabAsset/asset_page.dart';
 import 'package:sertifikasi_pertama/day_3/Navigation/home_page.dart';
 import 'package:sertifikasi_pertama/day_3/Navigation/text_input_page.dart';
 import 'package:sertifikasi_pertama/day_3/Onboarding/onboarding.dart';
+import 'package:sertifikasi_pertama/day_4/fetch_api_builder.dart';
+import 'package:sertifikasi_pertama/day_4/fetch_api_get.dart';
 
 void main() {
   runApp(
@@ -29,7 +31,7 @@ class MyApp extends StatelessWidget {
       locale: DevicePreview.locale(context),
       builder: DevicePreview.appBuilder,
       debugShowCheckedModeBanner: false,
-      home: Onboarding(),
+      home: FetchApiBuilder(),
     );
   }
 }
